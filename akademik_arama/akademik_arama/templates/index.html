@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Akademik Yayınlar Arama</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        form {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        label {
+            font-weight: bold;
+            color: #333;
+        }
+        input[type="text"] {
+            padding: 10px;
+            width: 200px;
+            margin: 0 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            transition: border-color 0.3s ease-in-out;
+        }
+        input[type="text"]:focus {
+            border-color: #1E90FF;
+            outline: none;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #1E90FF;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease-in-out;
+        }
+        button:hover {
+            background-color: #007FFF;
+        }
+        hr {
+            border: 0;
+            border-top: 1px solid #ccc;
+            margin: 20px 0;
+        }
+        .result-list {
+            list-style-type: none;
+            padding: 0;
+        }
+        .result-item {
+            margin-bottom: 20px;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            background-color: #f2f2f2;
+            transition: transform 0.3s ease-in-out;
+        }
+        .result-item:hover {
+            transform: scale(1.03);
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        }
+        .result-item p {
+            margin: 5px 0;
+        }
+        a {
+            color: #1E90FF;
+            text-decoration: none;
+            transition: color 0.3s ease-in-out;
+        }
+        a:hover {
+            color: #007FFF;
+        }
+        .correction {
+            color: #FF0000;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+   </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Akademik Yayınlar</h1>
+        <form method="POST">
+            <label for="anahtar_kelime">Anahtar Kelime:</label>
+            <input type="text" id="anahtar_kelime" name="anahtar_kelime" required>
+            <button type="submit">Ara</button>
+        </form>
+        <hr>
+        {% if correction %}
+            <p class="correction">Düzeltme önerisi: {{ correction }}</p>
+        {% endif %}
+        {% if yayinlar %}
+            <h2>Sonuçlar:</h2>
+            <ul class="result-list">
+                {% for yayin in yayinlar|sort(attribute='yayin_adi') %}
+                    <li class="result-item">
+                        <p><strong>Yayın Adı:</strong> <a href="/detail/{{ yayin.yayin_id }}">{{ yayin.yayin_adi }}</a></p>
+                    </li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <p>Arama sonuçları bulunamadı.</p>
+        {% endif %}
+    </div>
+</body>
+</html>

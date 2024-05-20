@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yayın Detayları</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+            padding: 20px;
+        }
+        h1 {
+            text-align: center;
+        }
+        .detail-item {
+            margin-bottom: 20px;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .detail-item p {
+            margin: 5px 0;
+        }
+        a {
+            color: #1E90FF;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Yayın Detayları</h1>
+        <div class="detail-item">
+            <p><strong>Başlık:</strong> {{ yayin.yayin_adi }}</p>
+            <p><strong>Yazarlar:</strong> {{ ', '.join(yayin.yazarlar) }}</p>
+            <p><strong>Tarih:</strong> {{ yayin.yayin_tarihi }}</p>
+            <p><strong>Yayıncı:</strong> {{ yayin.yayinci_adi }}</p>
+            <p><strong>URL:</strong> <a href="{{ yayin.url }}" target="_blank">{{ yayin.url }}</a></p>
+            <p><strong>Özet:</strong> {{ yayin.ozet }}</p>
+            <p><strong>Alıntı Sayısı:</strong> {{ yayin.alinti_sayisi }}</p>
+            <p><strong>DOI:</strong> {{ yayin.doi }}</p>
+        </div>
+    </div>
+</body>
+</html>
