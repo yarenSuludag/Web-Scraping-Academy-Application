@@ -108,16 +108,19 @@ The database consists of the following collections:
 
 ## Screenshots
 ### Database View
-![Database Screenshot](images/database_screenshot.png)
+#### MongoDB Collections
+![Database Screenshot 1](images/database_view_1.png)
 
-### Web Scraping Process
-![Scraping Process](images/scraping_process.png)
+#### Indexed Data Example
+![Database Screenshot 2](images/database_view_2.png)
 
 ### Web Interface
-![Web Interface](images/web_interface.png)
+#### Search and Results Page
+![Web Interface 1](images/interface_search_results.png)
 
-### Publication Details
-![Publication Details](images/publication_details.png)
+
+![Web Interface 2](images/interface_publication_details.png)
+
 
 ## References
 1. [Stack Overflow](https://stackoverflow.com)
