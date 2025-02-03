@@ -109,17 +109,17 @@ The database consists of the following collections:
 ## Screenshots
 ### Database View
 #### MongoDB Collections
-![Database Screenshot 1](images/database_view_1.png)
+![Database Screenshot 1](images2/database_view_1.png)
 
 #### Indexed Data Example
-![Database Screenshot 2](images/database_view_2.png)
+![Database Screenshot 2](images2/database_view_2.png)
 
 ### Web Interface
 #### Search and Results Page
-![Web Interface 1](images/interface_search_results.png)
+![Web Interface 1](images2/interface_search_results.png)
 
 
-![Web Interface 2](images/interface_publication_details.png)
+![Web Interface 2](images2/interface_publication_details.png)
 
 
 ## References
